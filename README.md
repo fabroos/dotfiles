@@ -2,6 +2,8 @@
 
 Personal dotfiles with a Japanese aesthetic. Kanagawa Wave theme, minimal and clean.
 
+![screenshot](screenshot.png)
+
 ## What's inside
 
 ```
