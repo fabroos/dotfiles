@@ -1,0 +1,82 @@
+#
+#       ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗████████╗██╗   ██╗
+#      ██╔════╝ ██║  ██║██╔═══██╗██╔════╝╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+#      ██║  ███╗███████║██║   ██║███████╗   ██║      ██║    ╚████╔╝
+#      ██║   ██║██╔══██║██║   ██║╚════██║   ██║      ██║     ╚██╔╝
+#      ╚██████╔╝██║  ██║╚██████╔╝███████║   ██║      ██║      ██║
+#       ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝      ╚═╝
+#
+#                      Ghostty Terminal Config 👻
+#
+
+# --- macOS behavior ---
+# Treat Option key as Alt on macOS
+macos-option-as-alt = true
+# Use non-native fullscreen (fast; no tab support)
+macos-non-native-fullscreen = true
+# Use a tab-integrated titlebar
+macos-titlebar-style = tabs
+# Do not restore window state on startup
+window-save-state = never
+
+# --- Shell integration & appearance ---
+# Enable zsh shell integration
+shell-integration = zsh
+# Disable shell integration cursor changes
+shell-integration-features = no-cursor
+# Subtle transparency with blur for depth
+background-opacity = 0.85
+background-blur-radius = 20
+# Balance extra padding in viewport
+window-padding-balance = true
+# Disable blinking cursor
+cursor-style-blink = false
+# Underline cursor for a minimal look
+cursor-style = underline
+
+# --- Keybindings for cursor movement ---
+# Alt-key bindings (beginning/end of line)
+keybind = alt+h=text:\x01
+keybind = alt+l=text:\x05
+
+# Cmd-key bindings (beginning/end of line)
+keybind = cmd+left=text:\x01
+keybind = cmd+right=text:\x05
+
+# Alt-arrow bindings (word movements)
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+
+# --- Theme ---
+# Kanagawa Wave - inspired by Hokusai's Great Wave
+theme = Kanagawa Wave
+# Auto-derive titlebar color from terminal background
+window-theme = auto
+# Use the same font in the titlebar/tabs
+window-title-font-family = "Geist Sans Nerd"
+# Hide the macOS proxy icon for a cleaner tab bar
+macos-titlebar-proxy-icon = hidden
+# Title is set via shell precmd hook so programs can override it
+
+# --- Font ---
+font-family = "Geist Sans Nerd"
+font-size = 14
+
+# --- Clipboard ---
+# Allow clipboard reads from programs (e.g. neovim OSC 52)
+clipboard-read = allow
+
+# --- Quick terminal (global hotkey) ---
+# Toggle a dropdown terminal from anywhere with Ctrl+`
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.1
+
+# --- Splits ---
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+ctrl+h=goto_split:left
+keybind = cmd+ctrl+l=goto_split:right
+keybind = cmd+ctrl+k=goto_split:top
+keybind = cmd+ctrl+j=goto_split:bottom
+
