@@ -18,6 +18,8 @@ macos-non-native-fullscreen = true
 macos-titlebar-style = tabs
 # Do not restore window state on startup
 window-save-state = never
+# Skip close confirmation dialogs
+confirm-close-surface = false
 
 # --- Shell integration & appearance ---
 # Enable zsh shell integration
