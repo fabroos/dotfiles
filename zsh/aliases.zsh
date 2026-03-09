@@ -55,12 +55,23 @@ alias mkdir="mkdir -pv"
 alias myip="curl ifconfig.me"
 alias ports="netstat -tulanp"
 
-## Claude
-alias clauded="claude --dangerously-skip-permissions"
-alias cc="claude"
-alias ccc="claude --continue"
-alias ccr="claude --resume"
+## Claude (wrapper functions for custom tab title)
+_claude_run() {
+  local folder="${PWD##*/}"
+  printf "\e]0;%s 〉Claude Code\a" "$folder"
+  CLAUDE_CODE_DISABLE_TERMINAL_TITLE=1 command claude "$@"
+  # Restore normal title on exit
+  if [[ "$PWD" == "$HOME" ]]; then
+    printf "\e]0;家 ホーム\a"
+  else
+    printf "\e]0;道 %s\a" "${PWD##*/}"
+  fi
+}
+alias cc="_claude_run"
+alias ccc="_claude_run --continue"
+alias ccr="_claude_run --resume"
 alias ccp="claude --print"
+alias clauded="_claude_run --dangerously-skip-permissions"
 
 ##
 alias ls="eza --icons"

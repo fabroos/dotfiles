@@ -59,6 +59,8 @@ window-title-font-family = "Geist Sans Nerd"
 # Hide the macOS proxy icon for a cleaner tab bar
 macos-titlebar-proxy-icon = hidden
 # Title is set via shell precmd hook so programs can override it
+# New tabs/splits inherit the working directory of the current tab
+window-inherit-working-directory = true
 
 # --- Font ---
 font-family = "Geist Sans Nerd"
